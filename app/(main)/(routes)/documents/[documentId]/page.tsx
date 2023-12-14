@@ -62,6 +62,7 @@ const DocumentIdPage = ({
         <Editor
           onChange={onChange}
           initialContent={document.content}
+          id={params.documentId}
         />
       </div>
     </div>
