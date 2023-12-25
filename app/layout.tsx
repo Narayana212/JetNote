@@ -2,6 +2,7 @@ import { Toaster } from "sonner";
 import { Inter } from 'next/font/google'
 import type { Metadata } from 'next'
 
+import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
 import { ModalProvider } from "@/components/providers/modal-provider";
@@ -37,7 +38,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className=`${inter.className} grainy`>
+      <body className={cn(
+            'min-h-screen font-sans antialiased grainy',
+            inter.className
+          )}>
         <ConvexClientProvider>
           <EdgeStoreProvider>
             <ThemeProvider
