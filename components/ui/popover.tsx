@@ -12,6 +12,15 @@ const PopoverTrigger = PopoverPrimitive.Trigger
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content>
+/**
+ * Renders a popover content component with customizable alignment and styling.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS class names for the popover content.
+ * @param {string} [props.align="center"] - Alignment of the popover content.
+ * @param {number} [props.sideOffset=4] - Offset from the side of the popover trigger.
+ * @param {React.Ref} ref - Ref object for the popover content.
+ * @returns {React.ReactElement} A PopoverPrimitive.Content component wrapped in a Portal.
+ */
 >(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
   <PopoverPrimitive.Portal>
     <PopoverPrimitive.Content
